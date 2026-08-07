@@ -58,15 +58,16 @@ function Footer() {
           </motion.div>
 
           {/* Right */}
-          <motion.p
-            className="text-xs text-white/40"
+          <motion.div
+            className="flex items-center gap-4 text-xs text-white/40"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            &copy; {new Date().getFullYear()} Livenza Group. All rights reserved.
-          </motion.p>
+            <a href="#admin" className="hover:text-white transition-colors duration-300">Admin</a>
+            <p>&copy; {new Date().getFullYear()} Livenza Group. All rights reserved.</p>
+          </motion.div>
         </div>
       </div>
     </motion.footer>
