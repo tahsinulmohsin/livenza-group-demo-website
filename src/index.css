@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-livenza-primary: #1C2539;
+  --color-livenza-dark: #20282D;
+  --color-livenza-sub: #5D666F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FAFBFC;
+  color: #1C2539;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #1C2539;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5D666F;
+}
+
+/* Glass effect utility */
+.glass-effect {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.dark .glass-effect {
+  background: rgba(11, 15, 26, 0.90);
+}
+
+/* Scrollbar styling */
+.dark ::-webkit-scrollbar-track {
+  background: #0B0F1A;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #2a3040;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4a5060;
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Subtle floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse ring animation for CTA */
+@keyframes pulseRing {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(28, 37, 57, 0.4); }
+  70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(28, 37, 57, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(28, 37, 57, 0); }
+}
+
+/* Grid dot pattern */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(28, 37, 57, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .dot-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Selection styling */
+::selection {
+  background-color: #1C2539;
+  color: #ffffff;
+}
+
+.dark ::selection {
+  background-color: #3B82F6;
+  color: #ffffff;
+}
