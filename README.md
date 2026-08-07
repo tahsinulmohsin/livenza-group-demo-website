@@ -10,7 +10,9 @@ https://livenza-group-demo-website.vercel.app/
 ## ✨ Features
 
 - **Single-Page Application** — State-driven view toggling, no router needed
-- **5 Subsidiary Companies** — Real data sourced from [livenzagroup.com](https://livenzagroup.com)
+- **Firebase Backend** — Real-time content management powered by Firestore
+- **Secure Admin Panel** — Built-in dashboard protected by Firebase Authentication
+- **5 Subsidiary Companies** — Dynamic data seeded and fetched from the cloud
 - **Dark Mode** — Toggle with system preference detection & localStorage persistence
 - **Scroll Animations** — Parallax backgrounds, staggered reveals, 3D tile perspectives
 - **Glassmorphic Navbar** — Frosted glass effect with animated back navigation
@@ -33,6 +35,7 @@ https://livenza-group-demo-website.vercel.app/
 |------------|---------|
 | [React 19](https://react.dev) | UI framework (functional components, hooks) |
 | [Vite 6](https://vite.dev) | Build tool & dev server |
+| [Firebase](https://firebase.google.com) | Backend (Firestore Database & Authentication) |
 | [Tailwind CSS 3](https://tailwindcss.com) | Utility-first styling with dark mode |
 | [Framer Motion](https://www.framer.com/motion/) | Animations & scroll effects |
 | [Lucide React](https://lucide.dev) | Icon library |
@@ -42,14 +45,17 @@ https://livenza-group-demo-website.vercel.app/
 ```
 src/
 ├── data/
-│   └── subsidiaries.js        # Structured data for all 5 companies
+│   └── subsidiaries.js        # Default fallback data (used to auto-seed Firestore)
 ├── components/
+│   ├── AdminPanel.jsx          # Secure dashboard to edit content
+│   ├── AdminLogin.jsx          # Firebase Authentication UI
 │   ├── Navbar.jsx              # Sticky glassmorphic navbar + dark mode toggle
 │   ├── Hero.jsx                # Full-viewport hero with parallax
 │   ├── TileGrid.jsx            # Responsive 2-column grid with scroll effects
 │   ├── DetailView.jsx          # Company detail page with slide transitions
-│   └── Footer.jsx              # Corporate footer
-├── App.jsx                     # Root SPA with view state management
+│   └── Footer.jsx              # Corporate footer with hidden Admin link
+├── App.jsx                     # Root SPA, Firebase data syncing, routing
+├── firebase.js                 # Firebase initialization & configuration
 ├── main.jsx                    # React 18 entry point
 └── index.css                   # Global styles, Tailwind directives, animations
 ```
@@ -76,6 +82,13 @@ npm run dev
 ```
 
 The app will be available at **http://localhost:5173/**
+
+### Admin Panel Access
+To access the content management system:
+1. Ensure your Firebase configuration is correctly added in `src/firebase.js`.
+2. Navigate to `http://localhost:5173/#admin` (or click the "Admin" link in the footer).
+3. Log in with your Firebase Authentication credentials.
+4. Any changes saved here will immediately write to Firestore and update the live site.
 
 ### Production Build
 
