@@ -24,8 +24,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FAFBFC;
-  color: #1C2539;
+  @apply bg-[#FAFBFC] text-livenza-primary dark:bg-[#0B0F1A] dark:text-white transition-colors duration-500;
 }
 
 /* Scrollbar styling */
