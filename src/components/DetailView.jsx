@@ -1,12 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import {
-  ArrowLeft,
-  ExternalLink,
-  Building2,
-  Target,
-  Sparkles,
-} from "lucide-react";
+import { ArrowLeft, ExternalLink, Building2, Target, Sparkles } from "lucide-react";
+import { getIcon } from "../utils/iconMap";
 
 function DetailView({ subsidiary, onBack }) {
   const {
@@ -17,9 +12,10 @@ function DetailView({ subsidiary, onBack }) {
     url,
     color,
     gradient,
-    icon: Icon,
+    icon: iconName,
   } = subsidiary;
 
+  const Icon = getIcon(iconName);
   const headerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: headerRef,

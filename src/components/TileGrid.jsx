@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { getIcon } from "../utils/iconMap";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -118,7 +119,8 @@ function TileGrid({ subsidiaries, onTileClick }) {
 }
 
 function SubsidiaryTile({ subsidiary, onClick, index }) {
-  const { name, sector, tagline, color, gradient, icon: Icon } = subsidiary;
+  const { name, sector, tagline, color, gradient, icon: iconName } = subsidiary;
+  const Icon = getIcon(iconName);
   const tileRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: tileRef,

@@ -20,7 +20,7 @@ const subsidiaries = [
     bgLight: "bg-blue-50",
     textColor: "text-blue-600",
     borderColor: "border-blue-500",
-    icon: Zap,
+    icon: "Zap",
   },
   {
     id: "expo-accessories",
@@ -35,7 +35,7 @@ const subsidiaries = [
     bgLight: "bg-emerald-50",
     textColor: "text-emerald-600",
     borderColor: "border-emerald-500",
-    icon: Package,
+    icon: "Package",
   },
   {
     id: "gesl",
@@ -50,7 +50,7 @@ const subsidiaries = [
     bgLight: "bg-amber-50",
     textColor: "text-amber-600",
     borderColor: "border-amber-500",
-    icon: Sun,
+    icon: "Sun",
   },
   {
     id: "greenery-canada",
@@ -65,7 +65,7 @@ const subsidiaries = [
     bgLight: "bg-violet-50",
     textColor: "text-violet-600",
     borderColor: "border-violet-500",
-    icon: Globe,
+    icon: "Globe",
   },
   {
     id: "greenery-mart",
@@ -80,7 +80,7 @@ const subsidiaries = [
     bgLight: "bg-rose-50",
     textColor: "text-rose-600",
     borderColor: "border-rose-500",
-    icon: ShoppingBag,
+    icon: "ShoppingBag",
   },
 ];
 
