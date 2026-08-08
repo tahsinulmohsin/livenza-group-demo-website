@@ -37,11 +37,9 @@ function BentoGrid({ subsidiaries, onTileClick }) {
                 style={{ backgroundImage: `url(${sub.bgImageUrl})` }}
               />
               
-              {/* Heavy Frosted Glass Overlay (Apple Style) */}
-              <div className="absolute inset-0 bg-white/40 dark:bg-black/40 backdrop-blur-xl group-hover:backdrop-blur-md transition-all duration-500" />
               
-              {/* Gradient Overlay for text legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              {/* Gradient Overlay — only darkens the bottom for text legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
               {/* Content */}
               <div className="absolute inset-0 p-8 md:p-10 flex flex-col h-full z-10">
