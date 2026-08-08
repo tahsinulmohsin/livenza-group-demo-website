@@ -46,32 +46,25 @@ function DetailView({ subsidiary, onBack }) {
           <span className="text-sm font-medium">Back to Group Overview</span>
         </motion.button>
 
-        {/* Header section with scroll scale effect */}
+        {/* Header section with scroll scale effect and background image */}
         <motion.div
           ref={headerRef}
-          className="relative overflow-hidden rounded-3xl bg-white dark:bg-white/[0.04] border border-gray-100 dark:border-white/[0.06] shadow-sm"
+          className="relative overflow-hidden rounded-3xl border border-gray-100 dark:border-white/[0.06] shadow-sm min-h-[300px] sm:min-h-[400px] flex flex-col justify-end"
           style={{ scale: headerScale, opacity: headerOpacity }}
         >
-          {/* Gradient accent with animated reveal */}
-          <motion.div
-            className={`h-2 bg-gradient-to-r ${gradient}`}
-            initial={{ scaleX: 0, originX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          {/* Detail Image Background */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${subsidiary.detailImageUrl})` }}
           />
 
-          {/* Decorative background shapes */}
-          <motion.div
-            className="absolute top-0 right-0 w-80 h-80 opacity-[0.03] dark:opacity-[0.05]"
-            style={{ color }}
-            initial={{ scale: 0, rotate: -20 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          >
-            <Icon className="w-full h-full" />
-          </motion.div>
+          {/* Frosted Glass Overlay */}
+          <div className="absolute inset-0 bg-white/60 dark:bg-black/60 backdrop-blur-md" />
 
-          <div className="relative p-6 sm:p-10 md:p-14">
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+          <div className="relative p-6 sm:p-10 md:p-14 z-10 w-full text-left">
             {/* Sector badge */}
             <motion.div
               initial={{ opacity: 0, y: 10, scale: 0.9 }}
@@ -79,20 +72,16 @@ function DetailView({ subsidiary, onBack }) {
               transition={{ delay: 0.15, type: "spring", stiffness: 200 }}
             >
               <span
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase"
-                style={{
-                  backgroundColor: `${color}15`,
-                  color,
-                }}
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-white/20 backdrop-blur-md border border-white/20"
               >
-                <Icon className="w-3.5 h-3.5" />
+                <Icon className="w-3.5 h-3.5 text-white" />
                 {sector}
               </span>
             </motion.div>
 
             {/* Name */}
             <motion.h1
-              className="mt-5 font-bold text-livenza-primary dark:text-white text-3xl sm:text-4xl md:text-5xl leading-tight"
+              className="mt-5 font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight drop-shadow-md"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -102,8 +91,7 @@ function DetailView({ subsidiary, onBack }) {
 
             {/* Tagline */}
             <motion.p
-              className="mt-3 sm:mt-4 text-lg sm:text-xl font-medium leading-relaxed"
-              style={{ color }}
+              className="mt-3 sm:mt-4 text-lg sm:text-xl font-medium leading-relaxed text-white/90"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}

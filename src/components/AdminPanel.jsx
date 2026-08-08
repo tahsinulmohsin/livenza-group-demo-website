@@ -30,6 +30,8 @@ function AdminPanel({ onLogout, subsidiaries, setSubsidiaries }) {
       summary: sub.summary,
       url: sub.url,
       sector: sub.sector,
+      bgImageUrl: sub.bgImageUrl,
+      detailImageUrl: sub.detailImageUrl,
     });
     setSaveStatus({ type: '', message: '' });
   };
@@ -76,14 +78,14 @@ function AdminPanel({ onLogout, subsidiaries, setSubsidiaries }) {
     setIsSyncing(true);
     try {
       const seedPromises = defaultSubsidiaries.map((sub) => 
-        setDoc(doc(db, "subsidiaries", sub.id), sub)
+        setDoc(doc(db, "subsidiaries", sub.id), sub, { merge: true })
       );
       await Promise.all(seedPromises);
       setSubsidiaries(defaultSubsidiaries);
       alert("Database successfully synced with official brandbook data!");
     } catch (error) {
       console.error("Error syncing:", error);
-      alert("Failed to sync database.");
+      alert(`Failed to sync database: ${error.message}`);
     } finally {
       setIsSyncing(false);
     }
@@ -191,6 +193,30 @@ function AdminPanel({ onLogout, subsidiaries, setSubsidiaries }) {
                         type="text"
                         name="tagline"
                         value={formData.tagline || ''}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2.5 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-livenza-primary focus:border-transparent outline-none dark:text-white transition-colors"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-livenza-primary dark:text-gray-300 mb-2">Background Image URL (Placeholder)</label>
+                      <input
+                        type="url"
+                        name="bgImageUrl"
+                        value={formData.bgImageUrl || ''}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2.5 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-livenza-primary focus:border-transparent outline-none dark:text-white transition-colors"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-livenza-primary dark:text-gray-300 mb-2">Detail Hero Image URL (Placeholder)</label>
+                      <input
+                        type="url"
+                        name="detailImageUrl"
+                        value={formData.detailImageUrl || ''}
                         onChange={handleChange}
                         className="w-full px-4 py-2.5 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-livenza-primary focus:border-transparent outline-none dark:text-white transition-colors"
                         required

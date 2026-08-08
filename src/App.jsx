@@ -4,7 +4,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import StackedSections from "./components/StackedSections";
+import BentoGrid from "./components/BentoGrid";
 import DetailView from "./components/DetailView";
 import Footer from "./components/Footer";
 import AdminLogin from "./components/AdminLogin";
@@ -131,7 +131,10 @@ function App() {
 
   // Main View
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFBFC] dark:bg-[#0B0F1A] transition-colors duration-500">
+    <div 
+      className="min-h-screen flex flex-col bg-[#FAFBFC] dark:bg-[#0B0F1A] transition-colors duration-500 bg-cover bg-fixed bg-center"
+      style={{ backgroundImage: "url('/bg.jpg')" }}
+    >
       <Navbar
         activeSubsidiary={activeSubsidiary}
         onBack={handleBack}
@@ -150,7 +153,7 @@ function App() {
           ) : (
             <div key="landing">
               <Hero />
-              <StackedSections
+              <BentoGrid
                 subsidiaries={subsidiaries}
                 onTileClick={handleTileClick}
               />

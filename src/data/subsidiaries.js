@@ -15,6 +15,8 @@ const subsidiaries = [
     summary:
       "Specializing in renewable energy, we provide complete turnkey solutions for solar systems, energy storage, energy-efficient HVAC, and EV chargers, backed by strict vendor management.",
     url: "https://livenzagroup.com/company/clean-energy-industrial-solutions-bd",
+    bgImageUrl: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=600&auto=format&fit=crop",
+    detailImageUrl: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1200&auto=format&fit=crop",
     color: "#059669",
     gradient: "from-emerald-600 to-teal-700",
     bgLight: "bg-emerald-50",
@@ -30,6 +32,8 @@ const subsidiaries = [
     summary:
       "We are a LEED Platinum certified green factory manufacturing sustainable green packaging solutions for the commercial and industrial sector.",
     url: "https://livenzagroup.com/company/rmg-packaging-manufacturing",
+    bgImageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop",
+    detailImageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
     color: "#2563EB",
     gradient: "from-blue-600 to-indigo-700",
     bgLight: "bg-blue-50",
@@ -45,6 +49,8 @@ const subsidiaries = [
     summary:
       "We manufacture pharmaceutical accessories and packaging, supporting the growth of the pharma industry with sustainable and safe manufacturing practices.",
     url: "https://livenzagroup.com",
+    bgImageUrl: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=600&auto=format&fit=crop",
+    detailImageUrl: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1200&auto=format&fit=crop",
     color: "#7C3AED",
     gradient: "from-violet-600 to-purple-700",
     bgLight: "bg-violet-50",
@@ -60,6 +66,8 @@ const subsidiaries = [
     summary:
       "We are making electric mobility more accessible by distributing BYD new energy vehicles and introducing electric delivery trucks to various industries.",
     url: "https://livenzagroup.com/company/automotive-ev-mobility",
+    bgImageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=600&auto=format&fit=crop",
+    detailImageUrl: "https://images.unsplash.com/photo-1563506161131-03f47c3e536f?q=80&w=1200&auto=format&fit=crop",
     color: "#0284C7",
     gradient: "from-sky-500 to-blue-600",
     bgLight: "bg-sky-50",
@@ -75,6 +83,8 @@ const subsidiaries = [
     summary:
       "We offer accessible and affordable groceries to industrial workers. Greenery Mart is a retail and e-commerce platform ensuring daily essentials are available to those who power industrial growth.",
     url: "https://livenzagroup.com/company/industrial-retail-worker-centric-stores",
+    bgImageUrl: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=600&auto=format&fit=crop",
+    detailImageUrl: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop",
     color: "#DC2626",
     gradient: "from-rose-500 to-red-600",
     bgLight: "bg-rose-50",
@@ -90,6 +100,8 @@ const subsidiaries = [
     summary:
       "We build environmentally friendly buildings and factories, bridging innovation with impact, from clean energy to circular manufacturing.",
     url: "https://livenzagroup.com",
+    bgImageUrl: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop",
+    detailImageUrl: "https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1200&auto=format&fit=crop",
     color: "#D97706",
     gradient: "from-amber-500 to-orange-600",
     bgLight: "bg-amber-50",
