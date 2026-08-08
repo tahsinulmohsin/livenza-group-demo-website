@@ -2,12 +2,35 @@ import { motion } from "framer-motion";
 import { getIcon } from "../utils/iconMap";
 import { ExternalLink, ChevronRight } from "lucide-react";
 
+// Map subsidiary IDs to their respective image folders and files
+const photoMap = {
+  "noor-autos": [
+    "/noor-autos-photo/unnamed (2).webp",
+    "/noor-autos-photo/unnamed(1).webp",
+    "/noor-autos-photo/unnamed.webp"
+  ],
+  "expo-accessories": [
+    "/expo-accessories-photo/images (1).jpeg",
+    "/expo-accessories-photo/images.jpeg"
+  ],
+  "gesl": [
+    "/gesl-photos/1771402467wadAM.webp",
+    "/gesl-photos/images.jpeg",
+    "/gesl-photos/lesso-soilar-1024x752.jpeg"
+  ],
+  "greenery-canada": [
+    "/greenery-import-export/467402998_122122323590424582_213689989362588177_n.jpg",
+    "/greenery-import-export/474558265_122129925062424582_5127204098679780961_n.jpg"
+  ]
+};
+
 function StackedSections({ subsidiaries, onTileClick }) {
   return (
     <div className="w-full flex flex-col">
       {subsidiaries.map((sub, index) => {
         const isEven = index % 2 === 0;
         const Icon = getIcon(sub.icon);
+        const images = photoMap[sub.id] || [];
 
         return (
           <section
@@ -98,24 +121,35 @@ function StackedSections({ subsidiaries, onTileClick }) {
               </motion.div>
             </div>
 
-            {/* Spacious Placeholder for Product Image/Cutout */}
+            {/* Showcase Product Images */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="mt-16 md:mt-24 w-full max-w-4xl flex-1 flex flex-col justify-end"
+              className="mt-16 md:mt-24 w-full max-w-6xl flex-1 flex flex-col justify-end"
             >
-              <div 
-                className="w-full h-64 md:h-96 rounded-t-3xl sm:rounded-3xl border-t border-x sm:border-b border-gray-200/60 dark:border-white/10 bg-gradient-to-b from-gray-100/50 to-transparent dark:from-white/5 dark:to-transparent flex items-center justify-center relative overflow-hidden group"
-              >
-                {/* Simulated reflections/glare */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent dark:from-white/5 pointer-events-none" />
-                
-                <span className="text-gray-400 dark:text-gray-600 font-medium text-sm md:text-base tracking-widest uppercase">
-                  Product / Showcase Image Placeholder
-                </span>
-              </div>
+              {images.length > 0 ? (
+                <div className={`grid gap-4 w-full ${images.length === 2 ? 'grid-cols-2' : images.length >= 3 ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-1'}`}>
+                  {images.map((src, i) => (
+                    <div key={i} className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] group bg-gray-100 dark:bg-gray-900 border border-gray-200/50 dark:border-white/10">
+                      <img 
+                        src={src} 
+                        alt={`${sub.name} showcase ${i + 1}`} 
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      {/* Subtle gradient overlay to blend into the design */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="w-full max-w-4xl mx-auto h-32 md:h-48 rounded-t-3xl sm:rounded-3xl border border-gray-200/60 dark:border-white/10 bg-gradient-to-b from-gray-100/50 to-transparent dark:from-white/5 dark:to-transparent flex items-center justify-center relative overflow-hidden">
+                  <span className="text-gray-400 dark:text-gray-600 font-medium text-sm md:text-base tracking-widest uppercase">
+                    Showcase Imagery Coming Soon
+                  </span>
+                </div>
+              )}
             </motion.div>
           </section>
         );
