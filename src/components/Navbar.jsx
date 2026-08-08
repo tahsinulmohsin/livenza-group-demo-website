@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Mail, Moon, Sun } from "lucide-react";
 
-function Navbar({ activeSubsidiary, onBack, darkMode, toggleDarkMode }) {
+function Navbar({ activeSubsidiary, onBack }) {
   return (
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 glass-effect dark:bg-[#0B0F1A]/90 dark:border-white/5 border-b border-gray-100/50 transition-colors duration-500"
@@ -45,27 +45,14 @@ function Navbar({ activeSubsidiary, onBack, darkMode, toggleDarkMode }) {
               <img
                 src="/logo.png"
                 alt="Livenza Group"
-                className={`h-9 sm:h-11 w-auto object-contain transition-all duration-500 ${
-                  darkMode ? "brightness-0 invert opacity-90" : ""
-                }`}
+                className={`h-9 sm:h-11 w-auto object-contain transition-all duration-500`}
               />
             </motion.a>
           </div>
 
           {/* Right: Dark mode toggle + Contact Button */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Dark mode toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 hover:scale-110 active:scale-95"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? (
-                <Sun className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-amber-400" />
-              ) : (
-                <Moon className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-livenza-primary dark:text-white/70" />
-              )}
-            </button>
+
 
             {/* Contact */}
             <motion.a

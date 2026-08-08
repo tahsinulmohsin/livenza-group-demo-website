@@ -21,22 +21,12 @@ function App() {
   // Routing state
   const [currentView, setCurrentView] = useState("main"); // "main" | "admin"
 
-  const [darkMode, setDarkMode] = useState(() => {
-    const stored = localStorage.getItem("livenza-dark-mode");
-    if (stored !== null) return stored === "true";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+  // Dark mode has been disabled globally to enforce the brand's light background aesthetic
 
-  // Dark mode effect
+  // Force removal of dark mode class just in case
   useEffect(() => {
-    const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-    localStorage.setItem("livenza-dark-mode", darkMode);
-  }, [darkMode]);
+    document.documentElement.classList.remove("dark");
+  }, []);
 
   // Auth listener
   useEffect(() => {
@@ -92,8 +82,6 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const toggleDarkMode = () => setDarkMode((prev) => !prev);
-
   const handleTileClick = (subsidiary) => {
     setActiveSubsidiary(subsidiary);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -135,8 +123,6 @@ function App() {
       <Navbar
         activeSubsidiary={activeSubsidiary}
         onBack={handleBack}
-        darkMode={darkMode}
-        toggleDarkMode={toggleDarkMode}
       />
 
       <main className="flex-1">

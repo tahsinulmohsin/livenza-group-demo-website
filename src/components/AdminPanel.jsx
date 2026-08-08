@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LogOut, Save, X, Edit2, Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { LogOut, Save, X, Edit2, Loader2, AlertCircle, CheckCircle2, RefreshCw } from 'lucide-react';
 import { collection, getDocs, doc, updateDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 import { signOut } from 'firebase/auth';
+import defaultSubsidiaries from '../data/subsidiaries';
 
 function AdminPanel({ onLogout, subsidiaries, setSubsidiaries }) {
   const [editingId, setEditingId] = useState(null);
   const [formData, setFormData] = useState({});
   const [isSaving, setIsSaving] = useState(false);
+  const [isSyncing, setIsSyncing] = useState(false);
   const [saveStatus, setSaveStatus] = useState({ type: '', message: '' });
 
   const handleLogout = async () => {
@@ -69,22 +71,50 @@ function AdminPanel({ onLogout, subsidiaries, setSubsidiaries }) {
     }
   };
 
+  const handleSyncBrandbook = async () => {
+    if (!window.confirm("Are you sure? This will overwrite your live database with the official brandbook data.")) return;
+    setIsSyncing(true);
+    try {
+      const seedPromises = defaultSubsidiaries.map((sub) => 
+        setDoc(doc(db, "subsidiaries", sub.id), sub)
+      );
+      await Promise.all(seedPromises);
+      setSubsidiaries(defaultSubsidiaries);
+      alert("Database successfully synced with official brandbook data!");
+    } catch (error) {
+      console.error("Error syncing:", error);
+      alert("Failed to sync database.");
+    } finally {
+      setIsSyncing(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#0B0F1A] py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-500">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 bg-white dark:bg-[#151B2B] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/10">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 bg-white dark:bg-[#151B2B] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/10 gap-4">
           <div>
             <h1 className="text-2xl font-bold text-livenza-primary dark:text-white">Content Management</h1>
             <p className="text-sm text-livenza-sub dark:text-white/60 mt-1">Edit subsidiary details directly on the live site.</p>
           </div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/40 rounded-lg transition-colors"
-          >
-            <LogOut className="w-4 h-4" />
-            <span className="hidden sm:inline">Sign Out</span>
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleSyncBrandbook}
+              disabled={isSyncing}
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-livenza-primary bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors disabled:opacity-50"
+            >
+              <RefreshCw className={`w-4 h-4 ${isSyncing ? 'animate-spin' : ''}`} />
+              <span className="hidden sm:inline">Sync Brandbook</span>
+            </button>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/40 rounded-lg transition-colors"
+            >
+              <LogOut className="w-4 h-4" />
+              <span className="hidden sm:inline">Sign Out</span>
+            </button>
+          </div>
         </div>
 
         {/* Content List */}

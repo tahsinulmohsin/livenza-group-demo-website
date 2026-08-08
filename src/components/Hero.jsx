@@ -98,10 +98,10 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          A Collective Entity of{" "}
+          Life, Vitality,{" "}
           <span className="relative inline-block">
             <span className="relative z-10 bg-gradient-to-r from-livenza-green to-livenza-blue bg-clip-text text-transparent">
-              Sustainable Growth
+              Flow, Growth
             </span>
             <motion.span
               className="absolute bottom-1 left-0 w-full h-3 bg-gradient-to-r from-livenza-green/40 to-livenza-blue/40 rounded-3xl -z-0"
@@ -120,10 +120,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          Livenza Group is a collective entity of sustainability-driven
-          companies united under one ecosystem — uniting clean energy, EV
-          mobility, sustainable manufacturing, and industrial retail for
-          multi-sector growth.
+          Livenza Group is a collective of sustainability-driven companies united under one ecosystem, dedicated to helping industries grow responsibly. We operate across multiple sectors — from renewable energy and eco-manufacturing to electric mobility, green construction, and sustainable retail — all connected by a shared mission to make sustainability effortless and accessible.
         </motion.p>
 
         {/* Stats */}

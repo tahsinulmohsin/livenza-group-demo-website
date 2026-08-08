@@ -130,9 +130,9 @@ function StackedSections({ subsidiaries, onTileClick }) {
               className="mt-16 md:mt-24 w-full max-w-6xl flex-1 flex flex-col justify-end"
             >
               {images.length > 0 ? (
-                <div className={`grid gap-4 w-full ${images.length === 2 ? 'grid-cols-2' : images.length >= 3 ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-1'}`}>
+                <div className={`grid gap-6 w-full ${images.length === 2 ? 'grid-cols-2' : images.length >= 3 ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-1'}`}>
                   {images.map((src, i) => (
-                    <div key={i} className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] group bg-gray-100 dark:bg-gray-900 border border-gray-200/50 dark:border-white/10">
+                    <div key={i} className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] aspect-[4/3] group bg-white border border-gray-100/80">
                       <img 
                         src={src} 
                         alt={`${sub.name} showcase ${i + 1}`} 
@@ -144,8 +144,8 @@ function StackedSections({ subsidiaries, onTileClick }) {
                   ))}
                 </div>
               ) : (
-                <div className="w-full max-w-4xl mx-auto h-32 md:h-48 rounded-t-3xl sm:rounded-3xl border border-gray-200/60 dark:border-white/10 bg-gradient-to-b from-gray-100/50 to-transparent dark:from-white/5 dark:to-transparent flex items-center justify-center relative overflow-hidden">
-                  <span className="text-gray-400 dark:text-gray-600 font-medium text-sm md:text-base tracking-widest uppercase">
+                <div className="w-full max-w-4xl mx-auto h-32 md:h-48 rounded-t-[2.5rem] sm:rounded-[2.5rem] border border-gray-100 bg-white/50 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex items-center justify-center relative overflow-hidden">
+                  <span className="text-gray-400 font-medium text-sm md:text-base tracking-widest uppercase">
                     Showcase Imagery Coming Soon
                   </span>
                 </div>

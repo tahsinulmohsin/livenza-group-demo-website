@@ -22,9 +22,33 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Myriad Variable Concept"', 'sans-serif'],
-        heading: ['"Acumin Variable Concept"', 'sans-serif'],
-        body: ['"Myriad Variable Concept"', 'sans-serif'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"San Francisco"',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'sans-serif',
+        ],
+        heading: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"San Francisco"',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'sans-serif',
+        ],
+        body: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"San Francisco"',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'sans-serif',
+        ],
       },
       backgroundImage: {
         'brand-gradient': 'linear-gradient(135deg, #22C55E 0%, #1D4ED8 100%)',
