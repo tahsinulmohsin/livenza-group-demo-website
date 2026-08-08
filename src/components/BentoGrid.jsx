@@ -24,10 +24,10 @@ function BentoGrid({ subsidiaries, onTileClick }) {
             <motion.div
               key={sub.id}
               onClick={() => onTileClick(sub)}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: index * 0.15 }}
               whileHover={{ scale: 0.98 }}
               className={`group relative rounded-[2rem] overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500 ${spanClass}`}
             >
