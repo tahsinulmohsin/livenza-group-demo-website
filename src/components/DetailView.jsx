@@ -58,11 +58,9 @@ function DetailView({ subsidiary, onBack }) {
             style={{ backgroundImage: `url(${subsidiary.detailImageUrl})` }}
           />
 
-          {/* Frosted Glass Overlay */}
-          <div className="absolute inset-0 bg-white/60 dark:bg-black/60 backdrop-blur-md" />
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          {/* Gradient Overlay for text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
           <div className="relative p-6 sm:p-10 md:p-14 z-10 w-full text-left">
             {/* Sector badge */}
