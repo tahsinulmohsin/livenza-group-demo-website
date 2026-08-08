@@ -21,23 +21,6 @@ function App() {
   // Routing state
   const [currentView, setCurrentView] = useState("main"); // "main" | "admin"
 
-  const [darkMode, setDarkMode] = useState(() => {
-    const stored = localStorage.getItem("livenza-dark-mode");
-    if (stored !== null) return stored === "true";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
-
-  // Sync dark mode
-  useEffect(() => {
-    const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-    localStorage.setItem("livenza-dark-mode", darkMode);
-  }, [darkMode]);
-
   // Auth listener
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -92,8 +75,6 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const toggleDarkMode = () => setDarkMode((prev) => !prev);
-
   const handleTileClick = (subsidiary) => {
     setActiveSubsidiary(subsidiary);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -106,8 +87,8 @@ function App() {
 
   if (loadingData) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#FAFBFC] dark:bg-[#0B0F1A]">
-        <div className="w-8 h-8 border-4 border-livenza-primary dark:border-white border-t-transparent rounded-full animate-spin"></div>
+      <div className="min-h-screen flex items-center justify-center bg-[#FAFBFC]">
+        <div className="w-8 h-8 border-4 border-livenza-primary border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -132,14 +113,12 @@ function App() {
   // Main View
   return (
     <div 
-      className="min-h-screen flex flex-col bg-[#FAFBFC] dark:bg-[#0B0F1A] transition-colors duration-500 bg-cover bg-fixed bg-center"
+      className="min-h-screen flex flex-col bg-[#FAFBFC] transition-colors duration-500 bg-cover bg-fixed bg-center"
       style={{ backgroundImage: "url('/bg.jpg')" }}
     >
       <Navbar
         activeSubsidiary={activeSubsidiary}
         onBack={handleBack}
-        darkMode={darkMode}
-        toggleDarkMode={toggleDarkMode}
       />
 
       <main className="flex-1">
