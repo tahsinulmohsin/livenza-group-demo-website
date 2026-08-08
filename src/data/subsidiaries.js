@@ -66,8 +66,8 @@ const subsidiaries = [
     summary:
       "We are making electric mobility more accessible by distributing BYD new energy vehicles and introducing electric delivery trucks to various industries.",
     url: "https://livenzagroup.com/company/automotive-ev-mobility",
-    bgImageUrl: "/noor-autos-photo/unnamed (2).webp",
-    detailImageUrl: "/noor-autos-photo/unnamed(1).webp",
+    bgImageUrl: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk7n-cKg1q_TFKK762phn4ttRNsAZJFsvErEHTE2-IkYLI-sYNQk4LNaa_D-XqkbEDeldSxFj2dksKpe7qMyqwsyx-3ctX1aXIpPxiNoZ3T7v5BWGap-JAgHF_71GNuVjU0h6w0NsGD4SM8=s1360-w1360-h1020-rw",
+    detailImageUrl: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk7n-cKg1q_TFKK762phn4ttRNsAZJFsvErEHTE2-IkYLI-sYNQk4LNaa_D-XqkbEDeldSxFj2dksKpe7qMyqwsyx-3ctX1aXIpPxiNoZ3T7v5BWGap-JAgHF_71GNuVjU0h6w0NsGD4SM8=s1360-w1360-h1020-rw",
     color: "#0284C7",
     gradient: "from-sky-500 to-blue-600",
     bgLight: "bg-sky-50",
