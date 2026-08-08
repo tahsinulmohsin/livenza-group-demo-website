@@ -4,7 +4,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import TileGrid from "./components/TileGrid";
+import StackedSections from "./components/StackedSections";
 import DetailView from "./components/DetailView";
 import Footer from "./components/Footer";
 import AdminLogin from "./components/AdminLogin";
@@ -150,7 +150,7 @@ function App() {
           ) : (
             <div key="landing">
               <Hero />
-              <TileGrid
+              <StackedSections
                 subsidiaries={subsidiaries}
                 onTileClick={handleTileClick}
               />
