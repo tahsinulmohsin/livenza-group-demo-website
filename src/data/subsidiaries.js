@@ -15,8 +15,8 @@ const subsidiaries = [
     summary:
       "Specializing in renewable energy, we provide complete turnkey solutions for solar systems, energy storage, energy-efficient HVAC, and EV chargers, backed by strict vendor management.",
     url: "https://livenzagroup.com/company/clean-energy-industrial-solutions-bd",
-    bgImageUrl: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=600&auto=format&fit=crop",
-    detailImageUrl: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1200&auto=format&fit=crop",
+    bgImageUrl: "/greenery-import-export/467402998_122122323590424582_213689989362588177_n.jpg",
+    detailImageUrl: "/gesl-photos/lesso-soilar-1024x752.jpeg",
     color: "#059669",
     gradient: "from-emerald-600 to-teal-700",
     bgLight: "bg-emerald-50",
@@ -32,8 +32,8 @@ const subsidiaries = [
     summary:
       "We are a LEED Platinum certified green factory manufacturing sustainable green packaging solutions for the commercial and industrial sector.",
     url: "https://livenzagroup.com/company/rmg-packaging-manufacturing",
-    bgImageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop",
-    detailImageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
+    bgImageUrl: "/expo-accessories-photo/images (1).jpeg",
+    detailImageUrl: "/expo-accessories-photo/images.jpeg",
     color: "#2563EB",
     gradient: "from-blue-600 to-indigo-700",
     bgLight: "bg-blue-50",
@@ -66,8 +66,8 @@ const subsidiaries = [
     summary:
       "We are making electric mobility more accessible by distributing BYD new energy vehicles and introducing electric delivery trucks to various industries.",
     url: "https://livenzagroup.com/company/automotive-ev-mobility",
-    bgImageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=600&auto=format&fit=crop",
-    detailImageUrl: "https://images.unsplash.com/photo-1563506161131-03f47c3e536f?q=80&w=1200&auto=format&fit=crop",
+    bgImageUrl: "/noor-autos-photo/unnamed (2).webp",
+    detailImageUrl: "/noor-autos-photo/unnamed(1).webp",
     color: "#0284C7",
     gradient: "from-sky-500 to-blue-600",
     bgLight: "bg-sky-50",
