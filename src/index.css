@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: 'Acumin Variable Concept';
+    src: local('Acumin Variable Concept'), local('Acumin-Variable-Concept');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Myriad Variable Concept';
+    src: local('Myriad Variable Concept'), local('Myriad-Variable-Concept');
+    font-display: swap;
+  }
+}
+
 :root {
   --color-livenza-primary: #1C2539;
   --color-livenza-dark: #20282D;
@@ -21,7 +35,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Myriad Variable Concept', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @apply bg-[#FAFBFC] text-livenza-primary dark:bg-[#0B0F1A] dark:text-white transition-colors duration-500;

@@ -100,11 +100,11 @@ function Hero() {
         >
           A Collective Entity of{" "}
           <span className="relative inline-block">
-            <span className="relative z-10 bg-gradient-to-r from-livenza-primary via-blue-700 to-emerald-600 dark:from-blue-400 dark:via-emerald-400 dark:to-teal-300 bg-clip-text text-transparent">
+            <span className="relative z-10 bg-gradient-to-r from-livenza-green to-livenza-blue bg-clip-text text-transparent">
               Sustainable Growth
             </span>
             <motion.span
-              className="absolute bottom-1 left-0 w-full h-3 bg-gradient-to-r from-emerald-200/50 to-blue-200/50 dark:from-emerald-800/40 dark:to-blue-800/40 rounded-full -z-0"
+              className="absolute bottom-1 left-0 w-full h-3 bg-gradient-to-r from-livenza-green/40 to-livenza-blue/40 rounded-3xl -z-0"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}

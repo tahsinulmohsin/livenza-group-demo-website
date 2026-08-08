@@ -117,7 +117,7 @@ function DetailView({ subsidiary, onBack }) {
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main summary — scroll reveal */}
           <motion.div
-            className="lg:col-span-2 bg-white dark:bg-white/[0.04] rounded-2xl border border-gray-100 dark:border-white/[0.06] shadow-sm p-6 sm:p-8"
+            className="lg:col-span-2 bg-white dark:bg-white/[0.04] rounded-3xl border border-gray-100 dark:border-white/[0.06] shadow-sm p-6 sm:p-8"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
@@ -178,7 +178,7 @@ function DetailView({ subsidiary, onBack }) {
           {/* Side info cards — staggered scroll reveals */}
           <div className="space-y-6">
             <motion.div
-              className="bg-white dark:bg-white/[0.04] rounded-2xl border border-gray-100 dark:border-white/[0.06] shadow-sm p-6"
+              className="bg-white dark:bg-white/[0.04] rounded-3xl border border-gray-100 dark:border-white/[0.06] shadow-sm p-6"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -205,7 +205,7 @@ function DetailView({ subsidiary, onBack }) {
             </motion.div>
 
             <motion.div
-              className="bg-white dark:bg-white/[0.04] rounded-2xl border border-gray-100 dark:border-white/[0.06] shadow-sm p-6"
+              className="bg-white dark:bg-white/[0.04] rounded-3xl border border-gray-100 dark:border-white/[0.06] shadow-sm p-6"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -234,7 +234,7 @@ function DetailView({ subsidiary, onBack }) {
 
             {/* Vision quote card with scroll reveal */}
             <motion.div
-              className={`rounded-2xl bg-gradient-to-br ${gradient} p-6 text-white overflow-hidden relative`}
+              className={`rounded-3xl bg-gradient-to-br ${gradient} p-6 text-white overflow-hidden relative`}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-40px" }}
