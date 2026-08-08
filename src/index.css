@@ -24,7 +24,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-[#FAFBFC] text-livenza-primary transition-colors duration-500;
+  @apply bg-[#FAFBFC] text-livenza-primary dark:bg-[#0B0F1A] dark:text-white transition-colors duration-500;
 }
 
 /* Scrollbar styling */
