@@ -5,6 +5,7 @@ import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import BentoGrid from "./components/BentoGrid";
+import ContactSection from "./components/ContactSection";
 import DetailView from "./components/DetailView";
 import Footer from "./components/Footer";
 import AdminLogin from "./components/AdminLogin";
@@ -136,6 +137,7 @@ function App() {
                 subsidiaries={subsidiaries}
                 onTileClick={handleTileClick}
               />
+              <ContactSection />
             </div>
           )}
         </AnimatePresence>
