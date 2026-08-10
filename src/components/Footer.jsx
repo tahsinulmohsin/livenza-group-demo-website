@@ -3,17 +3,17 @@ import { motion } from "framer-motion";
 function Footer() {
   return (
     <motion.footer
-      className="bg-livenza-primary dark:bg-[#060911] text-white/80 border-t border-transparent dark:border-white/[0.04] transition-colors duration-500"
+      className="bg-livenza-primary text-white/80 border-t border-transparent transition-colors duration-500"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.8 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10 md:gap-6">
           {/* Left */}
           <motion.div
-            className="flex items-center"
+            className="flex flex-col items-start gap-4"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -24,6 +24,12 @@ function Footer() {
               alt="Livenza Group"
               className="h-8 sm:h-10 w-auto object-contain brightness-0 invert opacity-90"
             />
+            <div className="text-xs text-white/60 leading-relaxed">
+              <p className="font-semibold text-white/80 mb-1">Head Office</p>
+              <p>Canyon Tower, Plot No. 24 & 26, Sector 12</p>
+              <p>Sonargaon Janapath Road, Uttara Model Town</p>
+              <p>Dhaka - 1230, Bangladesh</p>
+            </div>
           </motion.div>
 
           {/* Center */}
